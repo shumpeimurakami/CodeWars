@@ -1,0 +1,37 @@
+defmodule Kata do
+  def words_to_marks(s) do
+    s
+    |> String.replace("a","1,")
+    |> String.replace("b","2,")
+    |> String.replace("c","3,")
+    |> String.replace("d","4,")
+    |> String.replace("e","5,")
+    |> String.replace("f","6,")
+    |> String.replace("g","7,")
+    |> String.replace("h","8,")
+    |> String.replace("i","9,")
+    |> String.replace("j","10,")
+    |> String.replace("k","11,")
+    |> String.replace("l","12,")
+    |> String.replace("m","13,")
+    |> String.replace("n","14,")
+    |> String.replace("o","15,")
+    |> String.replace("p","16,")
+    |> String.replace("q","17,")
+    |> String.replace("r","18,")
+    |> String.replace("s","19,")
+    |> String.replace("t","20,")
+    |> String.replace("u","21,")
+    |> String.replace("v","22,")
+    |> String.replace("w","23,")
+    |> String.replace("x","24,")
+    |> String.replace("y","25,")
+    |> String.replace("z","26,")
+    |> String.split(:binary.compile_pattern([","]))
+    |> List.delete_at(-1)
+    |> Enum.map(fn x -> String.to_integer(x) end)
+    |> Enum.sum()
+  end
+end
+
+IO.puts(Kata.words_to_marks("friendship"))
